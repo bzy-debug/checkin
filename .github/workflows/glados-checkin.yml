@@ -1,10 +1,19 @@
 # up
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: "0 2 * * *"
   workflow_dispatch:
 
 jobs:
+  keep-alive:
+    name: keep alive
+    permissions:
+      actions: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: gautamkrishnar/keepalive-workflow@v2
+
   glados-checkin:
     name: glados checkin
     runs-on: ubuntu-latest
