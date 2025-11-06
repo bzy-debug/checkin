@@ -7,6 +7,7 @@ jobs:
   keep-alive:
     name: keep alive
     permissions:
+      contents: write
       actions: write
     runs-on: ubuntu-latest
     steps:
